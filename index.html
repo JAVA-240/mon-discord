@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Discord</title>
+  <style>
+    body {
+      margin: 0;
+      background: #050b1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .image-box {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .glitch {
+      position: absolute;
+      inset: 0;
+      background: url("image.png") center/cover no-repeat;
+      mix-blend-mode: screen;
+      filter: contrast(160%) saturate(180%) hue-rotate(20deg);
+      opacity: 0;
+      pointer-events: none;
+      animation: glitch 0.3s steps(2) infinite;
+    }
+
+    @keyframes glitch {
+      0%   { clip-path: inset(10% 0 80% 0); transform: translate(-8px, -4px); }
+      20%  { clip-path: inset(40% 0 40% 0); transform: translate(8px, 4px); }
+      40%  { clip-path: inset(80% 0 10% 0); transform: translate(-4px, 4px); }
+      60%  { clip-path: inset(20% 0 60% 0); transform: translate(4px, -4px); }
+      80%  { clip-path: inset(60% 0 20% 0); transform: translate(-8px, 8px); }
+      100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+    }
+
+    a {
+      color: #7dd3fc;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Rejoins mon serveur Discord 👇</h1>
+
+    <div class="image-box">
+      <img src="image.png" alt="Image cyber glitch">
+      <div class="glitch" id="glitch"></div>
+    </div>
+
+    <p style="margin-top:20px;">
+      <a href="TON_LIEN_DISCORD_ICI" target="_blank">
+        👉 Clique ici pour rejoindre
+      </a>
+    </p>
+  </div>
+
+  <script>
+    const glitch = document.getElementById("glitch");
+
+    setInterval(() => {
+      glitch.style.opacity = 1;
+      setTimeout(() => {
+        glitch.style.opacity = 0;
+      }, 1000);
+    }, 2000);
+  </script>
+
+</body>
+</html>
